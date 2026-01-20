@@ -1,0 +1,83 @@
+hacker@man~learning-from-documentation:~$ /challenge/challenge --giveflag  
+Correct argument! Here is your flag:  
+pwn.college{UuqboXWau8-IIN2_dI1aC90fQwC.QX0ITO0wCM2EDNzEzW}  
+
+hacker@man~learning-complex-usage:~$ ls /  
+bin   challenge  etc   home  lib32  libx32  mnt  opt   root  sbin  sys  usr  
+boot  dev        flag  lib   lib64  media   nix  proc  run   srv   tmp  var  
+hacker@man~learning-complex-usage:~$ /challenge/challenge --printfile /flag  
+Correct argument! Here is the /flag file:  
+pwn.college{UKjriIIj7tTMf3lVib1smB_JCzS.QX1ITO0wCM2EDNzEzW}  
+hacker@man~learning-complex-usage:~$ /challenge/challenge --printfile ~/not-the-flag  
+Correct argument! Here is the /home/hacker/not-the-flag file:  
+pwn.college{UKjriIIj7tTMf3lVib1smB_JCzS.QX1ITO0wCM2EDNzEzW}  
+
+hacker@man~reading-manuals:~$ man challenge
+Manual File  
+       --pgwdhj NUM  
+              print the flag if NUM is 834  
+hacker@man~reading-manuals:~$ /challenge/challenge --pgwdhj 834  
+Correct usage! Your flag: pwn.college{QPpgSIJ8WSw3dhCITj4WfCPZLK5.QX0EDO0wCM2EDNzEzW}  
+
+--itigr  
+            This argument will give you the flag!  
+hacker@man~searching-manuals:~$ man challenge  
+hacker@man~searching-manuals:~$ /challenge/challenge --itigr  
+Initializing...  
+Correct usage! Your flag: pwn.college{k9tTFCOcU465sOV-IEl4413pug9.QX1EDO0wCM2EDNzEzW}  
+
+-K, --global-apropos  
+              Search  for  text  in  all manual pages.  This is a brute-force search, and is likely to take  
+              some time; if you can, you should specify a section to reduce the number of pages  that  need  
+              to  be searched.  Search terms may be simple strings (the default), or regular expressions if  
+              the --regex option is used.  
+  
+              Note that this searches the sources of the manual pages, not the rendered text,  and  so  may  
+              include  false  positives due to things like comments in source files, or false negatives due  
+              to things like hyphens being written as "\-" in source files.  Searching  the  rendered  text  
+              would be much slower.  
+DESCRIPTION  
+       Output the flag when called with the right arguments.  
+  
+       --fortune  
+              read a fortune  
+  
+       --version  
+              output version information and exit  
+  
+       --lkibrg NUM  
+              print the flag if NUM is 060  
+hacker@man~searching-for-manuals:~$ man man  
+hacker@man~searching-for-manuals:~$ man -K /challenge/challenge  
+hacker@man~searching-for-manuals:~$ /challenge/challenge --lkibrg 060  
+Correct usage! Your flag: pwn.college{06SlAZk0i-R8brgS_haJ40jKt6E.QX2EDO0wCM2EDNzEzW}  
+
+hacker@man~helpful-programs:~$ /challenge/challenge --help  
+usage: a challenge to make you ask for help [-h] [--fortune] [-v] [-g GIVE_THE_FLAG] [-p]  
+  
+optional arguments:  
+  -h, --help            show this help message and exit  
+  --fortune             read your fortune  
+  -v, --version         get the version number  
+  -g GIVE_THE_FLAG, --give-the-flag GIVE_THE_FLAG  
+                        get the flag, if given the correct value  
+  -p, --print-value     print the value that will cause the -g option to give you the flag  
+hacker@man~helpful-programs:~$ /challenge/challenge -p  
+The secret value is: 603  
+hacker@man~helpful-programs:~$ /challenge/challenge -g 603  
+Correct usage! Your flag: pwn.college{wafOMwajO6zoxzYa_0M-3zVizYd.QX3IDO0wCM2EDNzEzW}  
+
+hacker@man~help-for-builtins:~$ help challenge  
+challenge: challenge [--fortune] [--version] [--secret SECRET]  
+    This builtin command will read you the flag, given the right arguments!  
+  
+    Options:  
+      --fortune         display a fortune  
+      --version         display the version  
+      --secret VALUE    prints the flag, if VALUE is correct  
+  
+    You must be sure to provide the right value to --secret. That value  
+    is "AJ5q9AkE".  
+hacker@man~help-for-builtins:~$ challenge --secret AJ5q9AkE  
+Correct! Here is your flag!  
+pwn.college{AJ5q9AkEWIxfW8M7IY42uyUjpu3.QX0ETO0wCM2EDNzEzW}  
