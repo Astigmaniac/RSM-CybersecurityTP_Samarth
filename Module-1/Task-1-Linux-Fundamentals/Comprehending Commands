@@ -1,0 +1,214 @@
+hacker@dojo:~$ cat myfile
+This is my file!
+hacker@dojo:~$ cat yourfile
+This is your file!
+hacker@dojo:~$ cat myfile yourfile
+This is my file!
+This is your file!
+hacker@dojo:~$ cat myfile yourfile myfile
+This is my file!
+This is your file!
+This is my file!
+
+hacker@commands~catting-absolute-paths:~$ cat /flag
+pwn.college{AhviXTf5eNvZ-RXyvPsf7NAIem-.QX5ETO0wCM2EDNzEzW}
+
+You cannot use the 'cd' command in this level, and must retrieve the flag by
+absolute path. Plus, I hid the flag in a different directory! You can find it
+in the file /bin/flag. Go cat it out **without** cding into that directory!
+hacker@commands~more-catting-practice:~$ cat /bin/flag
+pwn.college{UZGAlQZmuVfQTs5K5ePG2x62qre.QXwITO0wCM2EDNzEzW}
+
+hacker@commands~grepping-for-a-needle-in-a-haystack:~$ grep "pwn" /challenge/data.txt
+pwning
+pwn.college{oofZfce8J7YMd2d2r_NlewhLUGT.QX3EDO0wCM2EDNzEzW}
+pwns
+pwn
+pwned
+
+
+hacker@commands~comparing-files:~$ cd /challenge
+
+hacker@commands~comparing-files:/challenge$ diff decoys_only.txt decoys_and_real.txt
+
+26a27
+
+> pwn.college{sjoNcZjFLEgCJ1-1SIH6AGa9Xm6.01MwMDOxwCM2EDNzEzW}
+
+
+hacker@commands~listing-files:~$ cd /challenge
+
+hacker@commands~listing-files:/challenge$ ls
+
+29611-renamed-run-2073  DESCRIPTION.md
+
+hacker@commands~listing-files:/challenge$ ./29611-renamed-run-2073
+
+Yahaha, you found me! Here is your flag:
+
+pwn.college{A0sT67nmXpECA2az6Xnqm2s64Tl.QX4IDO0wCM2EDNzEzW}
+
+
+
+hacker@commands~touching-files:~$ touch /tmp/pwn
+
+hacker@commands~touching-files:~$ touch /tmp/college
+
+hacker@commands~touching-files:~$ /challenge/run
+
+Success! Here is your flag:
+
+pwn.college{kixs3012xPNTHE31lgOOItrw1rl.QXwMDO0wCM2EDNzEzW}
+
+
+hacker@commands~removing-files:~$ rm -rf delete_me  
+hacker@commands~removing-files:~$ /challenge/check  
+Excellent removal. Here is your reward:  
+pwn.college{gdqsnA7atAt2HVT8edg1hiu1mG_.QX2kDM1wCM2EDNzEzW}  
+
+hacker@commands~moving-files:~$ mv /flag /tmp/hack-the-planet  
+Correct! Performing 'mv /flag /tmp/hack-the-planet'.  
+hacker@commands~moving-files:~$ /challenge/check  
+Congrats! You successfully moved the flag to /tmp/hack-the-planet! Here it is:  
+pwn.college{Av91hpPXjwQVEKz2tmx28HRaIQW.0VOxEzNxwCM2EDNzEzW}  
+
+hacker@commands~hidden-files:~$ ls / -a  
+.   .dockerenv            bin   challenge  etc   lib    lib64   media  nix  proc  run   srv  tmp  var  
+..  .flag-75312680416529  boot  dev        home  lib32  libx32  mnt    opt  root  sbin  sys  usr  
+hacker@commands~hidden-files:~$ cat /.flag-75312680416529  
+pwn.college{gQ0qHNTCMcPnvTFEMYhQBypP7x6.QXwUDO0wCM2EDNzEzW  
+
+hacker@commands~an-epic-filesystem-quest:~$ ls /
+BLUEPRINT  boot       dev  flag  lib    lib64   media  nix  proc  run   srv  tmp  var
+bin        challenge  etc  home  lib32  libx32  mnt    opt  root  sbin  sys  usr
+hacker@commands~an-epic-filesystem-quest:~$ cat /BLUEPRINT
+Great sleuthing!
+The next clue is in: /usr/share/doc/libbrlapi0.7
+
+The next clue is **delayed** --- it will not become readable until you enter the directory with 'cd'.
+hacker@commands~an-epic-filesystem-quest:~$ cd /usr/share/doc/libbrlapi0.7
+hacker@commands~an-epic-filesystem-quest:/usr/share/doc/libbrlapi0.7$ cat NUGGET
+Tubular find!
+The next clue is in: /usr/lib/python3/dist-packages/sage/libs/flint/__pycache__
+hacker@commands~an-epic-filesystem-quest:/usr/share/doc/libbrlapi0.7$ cd /usr/lib/python3/dist-packages/sage/libs/flint/__pycache__
+hacker@commands~an-epic-filesystem-quest:/usr/lib/python3/dist-packages/sage/libs/flint/__pycache__$ ls
+INSIGHT  __init__.cpython-38.pyc
+hacker@commands~an-epic-filesystem-quest:/usr/lib/python3/dist-packages/sage/libs/flint/__pycache__$ cat INSIGHT
+Tubular find!
+The next clue is in: /usr/lib/python3/dist-packages/py/_path
+
+The next clue is **delayed** --- it will not become readable until you enter the directory with 'cd'.
+hacker@commands~an-epic-filesystem-quest:/usr/lib/python3/dist-packages/sage/libs/flint/__pycache__$ cd /usr/lib/python3/dist-packages/py/_path
+hacker@commands~an-epic-filesystem-quest:/usr/lib/python3/dist-packages/py/_path$ ls
+REVELATION  __init__.py  __pycache__  cacheutil.py  common.py  local.py  svnurl.py  svnwc.py
+hacker@commands~an-epic-filesystem-quest:/usr/lib/python3/dist-packages/py/_path$ cat REVELATION
+Congratulations, you found the clue!
+The next clue is in: /opt/linux/linux-5.4/arch/h8300/include/uapi
+
+The next clue is **delayed** --- it will not become readable until you enter the directory with 'cd'.
+hacker@commands~an-epic-filesystem-quest:/usr/lib/python3/dist-packages/py/_path$ cd /opt/linux/linux-5.4/arch/h8300/include/uapi
+hacker@commands~an-epic-filesystem-quest:/opt/linux/linux-5.4/arch/h8300/include/uapi$ ls
+CUE  asm
+hacker@commands~an-epic-filesystem-quest:/opt/linux/linux-5.4/arch/h8300/include/uapi$ cd CUE
+bash: cd: CUE: Not a directory
+hacker@commands~an-epic-filesystem-quest:/opt/linux/linux-5.4/arch/h8300/include/uapi$ cat CUE
+Congratulations, you found the clue!
+The next clue is in: /usr/lib/python3/dist-packages/jedi/inference
+
+Watch out! The next clue is **trapped**. You'll need to read it out without 'cd'ing into the directory; otherwise, the clue will self destruct!
+hacker@commands~an-epic-filesystem-quest:/opt/linux/linux-5.4/arch/h8300/include/uapi$ ls /usr/lib/python3/dist-packages/jedi/inference
+MEMO-TRAPPED  base_value.py  dynamic_params.py  helpers.py     parser_cache.py  sys_path.py
+__init__.py   cache.py       filters.py         imports.py     recursion.py     usages.py
+__pycache__   compiled       finder.py          lazy_value.py  signature.py     utils.py
+analysis.py   context.py     flow_analysis.py   names.py       star_args.py     value
+arguments.py  docstrings.py  gradual            param.py       syntax_tree.py
+hacker@commands~an-epic-filesystem-quest:/opt/linux/linux-5.4/arch/h8300/include/uapi$ cat /usr/lib/python3/dist-packages/jedi/inference/MEMO-TRAPPED
+Tubular find!
+The next clue is in: /opt/pwndbg/.venv/lib/python3.8/site-packages/pip/_internal/index
+
+Watch out! The next clue is **trapped**. You'll need to read it out without 'cd'ing into the directory; otherwise, the clue will self destruct!
+hacker@commands~an-epic-filesystem-quest:/opt/linux/linux-5.4/arch/h8300/include/uapi$ ls /opt/pwndbg/.venv/lib/python3.8/site-packages/pip/_internal/index
+NOTE-TRAPPED  __init__.py  __pycache__  collector.py  package_finder.py  sources.py
+hacker@commands~an-epic-filesystem-quest:/opt/linux/linux-5.4/arch/h8300/include/uapi$ cat /opt/pwndbg/.venv/lib/python3.8/site-packages/pip/_internal/index/NOTE-TRAPPED
+Tubular find!
+The next clue is in: /usr/lib/python3/dist-packages/sage/ext
+
+Watch out! The next clue is **trapped**. You'll need to read it out without 'cd'ing into the directory; otherwise, the clue will self destruct!
+hacker@commands~an-epic-filesystem-quest:/opt/linux/linux-5.4/arch/h8300/include/uapi$ ls /usr/lib/python3/dist-packages/sage/ext
+TRACE-TRAPPED                                 interpreters
+__init__.py                                   memory.cpython-38-x86_64-linux-gnu.so
+__pycache__                                   memory.pyx
+ccobject.h                                    memory_allocator.cpython-38-x86_64-linux-gnu.so
+cplusplus.pxd                                 memory_allocator.pxd
+fast_callable.cpython-38-x86_64-linux-gnu.so  memory_allocator.pyx
+fast_callable.pxd                             mod_int.h
+fast_callable.pyx                             mod_int.pxd
+fast_eval.cpython-38-x86_64-linux-gnu.so      solaris_fixes.h
+fast_eval.pxd                                 stdsage.pxd
+fast_eval.pyx
+hacker@commands~an-epic-filesystem-quest:/opt/linux/linux-5.4/arch/h8300/include/uapi$ cat /usr/lib/python3/dist-packages/sage/ext/TRACE-TRAPPED
+Tubular find!
+The next clue is in: /opt/linux/linux-5.4/drivers/staging/mt7621-pci-phy
+
+The next clue is **hidden** --- its filename starts with a '.' character. You'll need to look for it using special options to 'ls'.
+hacker@commands~an-epic-filesystem-quest:/opt/linux/linux-5.4/arch/h8300/include/uapi$ ls -a /opt/linux/linux-5.4/drivers/staging/mt7621-pci-phy
+.  ..  .LEAD  Kconfig  Makefile  TODO  mediatek,mt7621-pci-phy.txt  pci-mt7621-phy.c
+hacker@commands~an-epic-filesystem-quest:/opt/linux/linux-5.4/arch/h8300/include/uapi$ cat /opt/linux/linux-5.4/drivers/staging/mt7621-pci-phy/.LEAD
+CONGRATULATIONS! Your perserverence has paid off, and you have found the flag!
+It is: pwn.college{k7VmHuL4joiO6XZBWnTppc34lzE.QX5IDO0wCM2EDNzEzW}
+hacker@commands~an-epic-filesystem-quest:/opt/linux/linux-5.4/arch/h8300/include/uapi$
+hacker@commands~making-directories:~$ mkdir /tmp/pwn  
+hacker@commands~making-directories:~$ touch /tmp/pwn/college  
+hacker@commands~making-directories:~$ /challenge/run  
+Success! Here is your flag:  
+pwn.college{Ml_oXvmVPknynB6i3WPO1CybMRo.QXxMDO0wCM2EDNzEzW}  
+find: �/root�: Permission denied  
+find: �/etc/ssl/private�: Permission denied  
+find: �/tmp/tmp.TpSOPGOVKK�: Permission denied  
+/usr/local/lib/python3.8/dist-packages/pwnlib/flag  
+/usr/share/perl/5.30.0/TAP/Formatter/flag  
+find: �/var/cache/apt/archives/partial�: Permission denied  
+find: �/var/cache/ldconfig�: Permission denied  
+find: �/var/cache/private�: Permission denied  
+find: �/var/log/private�: Permission denied  
+find: �/var/log/apache2�: Permission denied  
+find: �/var/log/mysql�: Permission denied  
+find: �/var/lib/apt/lists/partial�: Permission denied  
+find: �/var/lib/mysql-files�: Permission denied  
+find: �/var/lib/mysql�: Permission denied  
+find: �/run/mysqld�: Permission denied  
+find: �/run/sudo�: Permission denied  
+find: �/proc/tty/driver�: Permission denied  
+find: �/proc/1/task/1/fd�: Permission denied  
+find: �/proc/1/task/1/fdinfo�: Permission denied  
+find: �/proc/1/task/1/ns�: Permission denied  
+find: �/proc/1/fd�: Permission denied  
+find: �/proc/1/map_files�: Permission denied  
+find: �/proc/1/fdinfo�: Permission denied  
+find: �/proc/1/ns�: Permission denied  
+find: �/proc/7/task/7/fd�: Permission denied  
+find: �/proc/7/task/7/fdinfo�: Permission denied  
+find: �/proc/7/task/7/ns�: Permission denied  
+find: �/proc/7/fd�: Permission denied  
+find: �/proc/7/map_files�: Permission denied  
+find: �/proc/7/fdinfo�: Permission denied  
+find: �/proc/7/ns�: Permission denied  
+/opt/pwndbg/.venv/lib/python3.8/site-packages/pwnlib/flag  
+/nix/store/7ns27apnvn4qj4q5c82x0z1lzixrz47p-radare2-5.9.8/share/radare2/5.9.8/flag  
+/nix/store/5z3sjp9r463i3siif58hq5wj5jmy5m98-python3.12-pwntools-4.13.1/lib/python3.12/site-packages/pwnlib/flag  
+/nix/store/5n5lp1m8gilgrsriv1f2z0jdjk50ypcn-rizin-0.7.3/share/rizin/flag  
+/nix/store/h88mxp2mbgyj06vypwmqpy05idhwimnp-python3.13-pwntools-4.14.1/lib/python3.13/site-packages/pwnlib/flag  
+/nix/store/s8b49lb0pqwvw0c6kgjbxdwxcv2bp0x4-radare2-5.9.8/share/radare2/5.9.8/flag  
+/nix/store/bnlabj2vsbljhp597ir29l51nrqhm89w-rizin-0.7.4/share/rizin/flag  
+/nix/store/1hyxipvwpdpcxw90l5pq1nvd6s6jdi5m-python3.12-pwntools-4.14.1/lib/python3.12/site-packages/pwnlib/flag  
+/nix/store/5qz6hgb1qzpvjrsw20wyiylx5zw8b9bk-pwntools-4.14.0/lib/python3.13/site-packages/pwnlib/flag  
+hacker@commands~finding-files:~$ cat /usr/local/lib/python3.8/dist-packages/pwnlib/flag  
+cat: /usr/local/lib/python3.8/dist-packages/pwnlib/flag: Is a directory  
+hacker@commands~finding-files:~$ cat /usr/share/perl/5.30.0/TAP/Formatter/flag  
+pwn.college{gXhZ2SZnULJWuoSJrz6R9ED8rwL.QXyMDO0wCM2EDNzEzW}  
+
+hacker@commands~linking-files:~$ ln -s /flag ~/not-the-flag  
+hacker@commands~linking-files:~$ /challenge/catflag  
+About to read out the /home/hacker/not-the-flag file!  
+pwn.college{ksZbTZ1XXdLcq45z_h56oiN-G5G.QX5ETN1wCM2EDNzEzW}  
+hacker@commands~linking-files:~$  
