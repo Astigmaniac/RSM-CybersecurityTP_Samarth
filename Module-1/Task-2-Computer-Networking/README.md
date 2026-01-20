@@ -1,0 +1,1 @@
+I keep forgetting how to use this lovely thing but nonetheless, the course had my hyped crying laughing and acknowledging the fact that IBM has all the IPs that have a 9. so on, sorry it's 2am and i slept post SP meet so i apologize for the late submission and sleepy words
