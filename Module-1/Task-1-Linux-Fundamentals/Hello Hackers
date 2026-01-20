@@ -1,0 +1,11 @@
+hacker@hello~intro-to-commands:~$ whoami
+hacker
+hacker@hello~intro-to-commands:~$ hello
+Success! Here is your flag:
+pwn.college{QlOkelNP9UOnDwVqodiFCF-T_a8.QX3YjM1wCM2EDNzEzW}
+
+hacker@hello~intro-to-arguments:~$ echo Hello
+Hello
+hacker@hello~intro-to-arguments:~$ hello hackers
+Success! Here is your flag:
+pwn.college{4Y8DbzLcTgQcEbnWb8Sob7vzwFe.QX4YjM1wCM2EDNzEzW}
