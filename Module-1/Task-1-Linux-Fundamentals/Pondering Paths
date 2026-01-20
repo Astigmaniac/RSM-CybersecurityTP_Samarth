@@ -1,0 +1,66 @@
+hacker@paths~the-root:~$ /pwn
+BOOM!!!
+Here is your flag:
+pwn.college{Q7GpIbTTkavylc2SnBJCdcTm-TS.QX4cTO0wCM2EDNzEzW}
+
+hacker@paths~program-and-absolute-paths:~$ /challenge/run
+Correct!!!
+/challenge/run is an absolute path! Here is your flag:
+pwn.college{QfXr1ZDK-vXtHRPqA-_P0j64ggD.QX1QTN0wCM2EDNzEzW}
+
+hacker@paths~position-thy-self:~$ cd /etc
+hacker@paths~position-thy-self:/etc$ /challenge/run
+Correct!!!
+/challenge/run is an absolute path, invoked from the right directory!
+Here is your flag:
+pwn.college{AwYWq4bCAVNAJYY4v5Lbtk2oF2O.QX2QTN0wCM2EDNzEzW}
+
+hacker@paths~position-elsewhere:~$ /challenge/run
+Incorrect...
+You are not currently in the /usr/share/doc/fontconfig directory.
+Please use the `cd` utility to change directory appropriately.
+hacker@paths~position-elsewhere:~$ cd /usr/share/doc/fontconfig
+hacker@paths~position-elsewhere:/usr/share/doc/fontconfig$ /challenge/run
+Correct!!!
+/challenge/run is an absolute path, invoked from the right directory!
+Here is your flag:
+pwn.college{QDqAZ6_9fS1OeWP0YXt0Mvybir2.QX3QTN0wCM2EDNzEzW}
+hacker@paths~position-elsewhere:/usr/share/doc/fontconfig$
+
+hacker@paths~position-yet-elsewhere:~$ /challenge/run
+Incorrect...
+You are not currently in the /proc/131 directory.
+Please use the `cd` utility to change directory appropriately.
+hacker@paths~position-yet-elsewhere:~$ cd /proc/131
+hacker@paths~position-yet-elsewhere:/proc/131$ /challenge/run
+Correct!!!
+/challenge/run is an absolute path, invoked from the right directory!
+Here is your flag:
+pwn.college{8TZvvaiVFdmvsDtPcb9HNH8dNO9.QX4QTN0wCM2EDNzEzW}
+
+hacker@paths~implicit-relative-paths-from-:~$ cd /
+hacker@paths~implicit-relative-paths-from-:/$ ^C
+hacker@paths~implicit-relative-paths-from-:/$ challenge/run
+Correct!!!
+challenge/run is a relative path, invoked from the right directory!
+Here is your flag:
+pwn.college{4DZUwdwA3atIyvN7lYKM0NcJJ9Z.QX5QTN0wCM2EDNzEzW}
+
+hacker@paths~explicit-relative-paths-from-:~$ cd /
+hacker@paths~explicit-relative-paths-from-:/$ ./challenge/run
+Correct!!!
+./challenge/run is a relative path, invoked from the right directory!
+Here is your flag:
+pwn.college{MBDheQwY7D2ggT811CAOFKQPDeQ.QXwUTN0wCM2EDNzEzW}
+
+hacker@paths~implicit-relative-path:~$ cd /challenge
+hacker@paths~implicit-relative-path:/challenge$ ./run
+Correct!!!
+./run is a relative path, invoked from the right directory!
+Here is your flag:
+pwn.college{0OtEfn4-4l6xuS-6UowTaMyFNNu.QXxUTN0wCM2EDNzEzW}
+
+hacker@paths~home-sweet-home:~$ /challenge/run ~/C
+Writing the file to /home/hacker/C!
+... and reading it back to you:
+pwn.college{8Aby-MNVpvl9LJLsPwWPvy1KpMO.QXzMDO0wCM2EDNzEzW}
